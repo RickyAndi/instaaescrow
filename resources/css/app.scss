@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+@charset "utf-8";
+
+$black: #4D4D4E;
+
+$orange: #F2A900;
+$primary: $orange;
+
+.navbar {
+    .navbar-item:hover {
+        color: $orange !important;
+    }
+
+    .navbar-link:hover {
+        color: $orange !important;
+    }
+
+    a::after {
+        color: $orange !important;
+    }
+}
+
+@import "./../../node_modules/bulma/sass/utilities/initial-variables";
+
+@import "./../../node_modules/bulma/bulma";
+
+html, body {
+    height: 100%;
+}
