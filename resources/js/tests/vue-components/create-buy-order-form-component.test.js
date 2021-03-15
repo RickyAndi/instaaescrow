@@ -1,6 +1,6 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils';
 import Vuex from 'vuex';
-import { INACTIVATE_CREATE_BUY_ORDER_MODAL } from '../../state/marketplace/mutation';
+import { INACTIVATE_CREATE_BUY_ORDER_MODAL, EMPTY_BUY_ORDERS } from '../../state/marketplace/mutation';
 import { CREATE_ORDER_BUY } from '../../state/marketplace/actions';
 import createBuyOrderFormComponent from '../../vue-components/create-buy-order-form-component.vue';
 
@@ -63,6 +63,8 @@ describe("create order buy form component", () => {
                 $t: () => {}
             }
         });
+
+        expect(wrapper.vm.isFormSubmitting).toBe(false);
 
         const closeModalButton = wrapper.find('[data-close-modal-button]');
         await closeModalButton.trigger('click');
